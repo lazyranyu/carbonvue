@@ -61,7 +61,6 @@ export default {
       }
       artical.getCarbonArticles(data).then(res => {
         this.records = res.records;
-        debugger
         // this.total = res.total
         // this.current = res.current
       }).catch(errror => {

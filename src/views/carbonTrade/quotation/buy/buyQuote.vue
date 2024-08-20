@@ -408,7 +408,7 @@ export default {
           pageNum: 1,
           pageSize: this.pageSize,
         };
-        debugger;
+        //debugger;
         this.getQuotePageList(data);
       } else {
         this.isSearch = false;

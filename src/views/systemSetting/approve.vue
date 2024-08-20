@@ -35,13 +35,12 @@ export default {
       jsApiList: ["DocsComponent"],
       lang: "",
       isShow: false,
-      fileUrl: "https://zfx2bso66l.feishu.cn/sheets/shtcnbYcQtLLL3qrapu0gj1xELe",
+      fileUrl: "https://www.feishu.cn/approval/admin/approvalList?devMode=on",
       fileToken: "",
       //  replaceTextList 高量区数据 textList替换数据  后面再字典加
       positionList:[],
       position:"",
       templateNum:'',
-
     };
   },
 
@@ -52,7 +51,7 @@ export default {
 
       let url = this.fileUrl;
        window.location.href=url
-      //window.open(url);
+      window.open(url);
     },
 
   },
@@ -62,7 +61,7 @@ export default {
       
   },
   created() {
-  //  this.templateNum = this.$route.query.templateNum;
+    this.templateNum = this.$route.query.templateNum;
   },
 };
 </script>

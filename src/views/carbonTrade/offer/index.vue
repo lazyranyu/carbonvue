@@ -466,7 +466,7 @@ export default {
             : this.selectedRole[0],
         };
 
-        debugger;
+        //debugger;
 
         getCarbonTradePriceList(data)
           .then((res) => {

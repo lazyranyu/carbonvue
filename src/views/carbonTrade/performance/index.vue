@@ -537,17 +537,17 @@ export default {
       };
       getCarbonTradePerfenceList(data)
         .then((res) => {
-          debugger;
+          //debugger;
           this.list = res.data.records;
           this.total = res.data.total;
           this.current = res.data.current;
           this.pageCount = Math.ceil(parseInt(res.data.total) / this.pageSize);
           this.list.map((v) => {
-            debugger;
+            //debugger;
             v.counterparty = handleText(v.counterparty, "--");
             v.tradeRoleName = handleText(v.tradeRoleName, "--");
             v.assetTypeName = handleText(v.assetTypeName, "全部");
-            debugger;
+            //debugger;
             v.projectTypeName = handleText(v.projectTypeName, "全部");
             v.tradeQuantity = handleText(v.tradeQuantity, "--");
             v.assetUnitPrice = handleText(v.assetUnitPrice, "--");

@@ -15,8 +15,7 @@
           </div> -->
             <img :src="loginCompanyIcon" />
           </div>
-          <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on"
-            label-position="left" @keyup.enter="handleLogin">
+          <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left" @keyup.enter="handleLogin">
             <div class="login-input">
               <span class="txt1">用户名</span>
               <img class="label1" referrerpolicy="no-referrer" src="@/assets/imgs/label1.jpg" />
@@ -34,26 +33,17 @@
               </span>
             </div>
 
+            <!-- <el-form-item prop="code" class="captcha">
+              <div class="captcha">
+                <el-input ref="username" v-model="loginForm.code" style="width: 218px" prefix-icon="el-icon-message"
+                  placeholder="验证码" name="username" type="text" tabindex="3" autocomplete="on" />
+                <div class="imgs" style="margin-left:10px" @click="getCaptcha()"><img src="captchatImg" /></div>
+              </div>
+            </el-form-item> -->
+
             <div class="section6">
               <el-checkbox label="记住我" @change="handleChecked" v-model="loginForm.rememberMe"></el-checkbox>
             </div>
-
-            <!-- <el-form-item prop="code" class="captcha">
-            <div class="captcha">
-              <el-input
-                ref="username"
-                v-model="loginForm.code"
-                style="width: 218px;"
-                prefix-icon="el-icon-message"
-                placeholder="验证码"
-                name="username"
-                type="text"
-                tabindex="3"
-                autocomplete="on"
-              />
-              <div class="imgs" style="margin-left:10px" @click="getCaptcha()"><img src="captchatImg"/></div>
-            </div>
-          </el-form-item> -->
 
             <div class="acea-row">
               <el-button :loading="loading" class="login" style="
@@ -188,7 +178,7 @@ export default {
     } else if (this.loginForm.password === "") {
       this.$refs.password.focus();
     }
-    // this.getCaptcha()
+    //this.getCaptcha()
     // this.agentWeiXinLogin()
   },
   destroyed() {
@@ -304,7 +294,7 @@ export default {
                 this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
               }
               // if(this.$wechat.isPhone()) this.$dialog.error(err.message);
-              // this.getCaptcha()
+              //this.getCaptcha()
             })
         } else {
           return false
@@ -600,6 +590,8 @@ $subsidiary-color: #808695;
 
 <style lang="scss">
 .captcha {
+  width: 450px;
+  height: 25px;
   display: flex;
   align-items: flex-start;
 }

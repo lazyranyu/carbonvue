@@ -170,7 +170,7 @@ export default {
 
       searchTradeAccountInfo(data)
         .then((res) => {
-          debugger;
+          //debugger;
           this.list = res.data.records;
           this.total = res.data.total;
           this.current = res.data.current;

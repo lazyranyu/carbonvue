@@ -417,6 +417,7 @@ export function getLoginPicApi() {
 export function captchaApi() {
   return request({
     url: `/admin/validate/code/get`,
+    // url: `/authCenter/auth/code`,
     method: 'get'
   })
 }
@@ -437,9 +438,9 @@ export function updateSpreadApi(data) {
  * @param {*} data 
  * @returns 
  */
-export function regCode(phone) {
+export function regCode(email) {
   return request({
-    url: `/authCenter/auth/register/code/` + phone,
+    url: `/authCenter/auth/register/code/` + email,
     method: 'GET',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   })
@@ -449,9 +450,9 @@ export function regCode(phone) {
  * @param {*} data 
  * @returns 
  */
-export function regForgotPasswordCode(phone) {
+export function regForgotPasswordCode(email) {
   return request({
-    url: `/authCenter/auth/forgotPassword/code/` + phone,
+    url: `/authCenter/auth/forgotPassword/code/` + email,
     method: 'GET',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
   })

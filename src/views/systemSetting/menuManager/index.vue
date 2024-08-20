@@ -365,7 +365,7 @@ export default {
           (res) => {
             this.$message.success("修改成功");
             this.dialogFormVisible = false;
-            debugger;
+            //debugger;
             location.reload();
             // this.getList(this.current);
           },
