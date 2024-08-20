@@ -16,6 +16,13 @@
               </div>
 
               <div class="login-input">
+                <span class="txt1">邮&nbsp;箱</span>
+                <img class="label1" referrerpolicy="no-referrer" src="@/assets/imgs/label1.jpg" />
+                <input class="user-input" ref="email" v-model="regForm.email" name="email" type="text"
+                  placeholder="请输入你的邮箱" />
+              </div>
+
+              <div class="login-input">
                 <span class="txt1">验&nbsp;证&nbsp;码</span>
                 <img class="label1" referrerpolicy="no-referrer" src="@/assets/imgs/label1.jpg" />
                 <input class="user-input" ref="verificationCode" v-model="regForm.verificationCode"
@@ -170,14 +177,22 @@ export default {
       var myreg = /^(((1[0-9][0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
       return myreg.test(str);
     },
+    verifyEmailFormat(str) {
+    const emailReg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    return emailReg.test(str);
+    },
     handlecode() {
       if (this.regForm.mobile !== '') {
         let is_phone = this.verifyPhoneNumberFormat(this.regForm.mobile);
         if (!is_phone) {
           return this.$message.error('手机格式错误！')
         }
+        let is_email = this.verifyEmailFormat(this.regForm.email);
+        if(!is_email){
+          return this.$message.error('邮箱格式错误！')
+        }
         this.getAuthCode()
-        regForgotPasswordCode(this.regForm.mobile).then((res, err) => {
+        regForgotPasswordCode(this.regForm.email).then((res, err) => {
           if (err) {
             this.$message.error(error)
           } else {
@@ -187,7 +202,7 @@ export default {
           this.$message.error(err.msg)
         })
       } else {
-        this.$message.error('请输入手机号')
+        this.$message.error('请输入邮箱')
       }
     },
     // 下一步
@@ -198,7 +213,8 @@ export default {
             "confirmPassword": this.regForm.confirmPassword,
             "code": this.regForm.verificationCode,
             "password": this.regForm.password,
-            "phone": this.regForm.mobile
+            "mobile": this.regForm.mobile,
+            "email": this.regForm.email
           }
           putForgotPassword(data)
             .then((data, err) => {

@@ -285,7 +285,7 @@ export default {
 
       loadCarbonExchangeList(data)
         .then((res) => {
-          debugger;
+  //        debugger;
           this.list = res.data.records;
           this.total = res.data.total;
           this.current = res.data.current;
@@ -300,7 +300,7 @@ export default {
           });
         })
         .catch((errror) => {
-          debugger;
+          //debugger;
         });
     },
     getCurListNo(index) {

@@ -672,7 +672,7 @@ export default {
           validityPeriod: this.addForm.validityPeriod,
         };
 
-        debugger;
+        //debugger;
         updatedAccout(data).then(
           (res) => {
             let JavaInfo = JSON.parse(Cookies.get("JavaInfo"));

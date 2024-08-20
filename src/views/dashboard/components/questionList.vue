@@ -39,7 +39,6 @@ export default {
       }
       artical.getCarbonArticles(data).then(res => {
         this.records = res.records
-        debugger
       }).catch(errror => {
 
       })
